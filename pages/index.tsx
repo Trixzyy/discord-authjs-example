@@ -1,50 +1,55 @@
 import { ReactNode } from 'react';
 import {
-    Avatar,
-    Box,
-    Button,
-    Center,
-    Flex,
-    Link,
-    Menu,
-    MenuButton,
-    MenuDivider,
-    MenuItem,
-    MenuList,
-    Stack,
-    Text,
-    useColorMode,
-    useColorModeValue,
-    useDisclosure,
-  } from '@chakra-ui/react';
+  Avatar,
+  Box,
+  Button,
+  Center,
+  Flex,
+  Link,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
+  Stack,
+  Text,
+  useColorMode,
+  useColorModeValue,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import type { NextPage } from 'next'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}>
-    {children}
-  </Link>
-);
+const NavLink = ({ children }: { children: ReactNode }) => {
+  const linkBg = useColorModeValue('gray.200', 'gray.700');
+  return (
+    <Link
+      px={2}
+      py={1}
+      rounded={'md'}
+      _hover={{
+        textDecoration: 'none',
+        bg: linkBg,
+      }}
+      href={'#'}>
+      {children}
+    </Link>
+  );
+};
 
 const Home: NextPage = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { data: session } = useSession()
+  const { data: session } = useSession();
+  const emailColor = useColorModeValue('gray.700', 'gray.200');
+  const boxBgColor = useColorModeValue('gray.100', 'gray.900');
 
   if (session) {
-    const { user } = session
+    const { user } = session;
     return (
       <>
-        <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+        <Box bg={boxBgColor} px={4}>
           <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
             <Box><Text fontSize="2xl" as="b">Discord NextAuth</Text></Box>
 
@@ -79,7 +84,7 @@ const Home: NextPage = () => {
                       <Text fontSize='22px' as="b">{user?.name}</Text>
                     </Center>
                     <center>
-                      <Text fontSize='15px' color={useColorModeValue('gray.700', 'gray.200')}>{user?.email}</Text>
+                      <Text fontSize='15px' color={emailColor}>{user?.email}</Text>
                     </center>
                     <MenuDivider />
                     <MenuItem>Your Account</MenuItem>
@@ -95,7 +100,7 @@ const Home: NextPage = () => {
   }
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={boxBgColor} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box><Text fontSize="2xl" as="b">BetterUpload</Text></Box>
 
