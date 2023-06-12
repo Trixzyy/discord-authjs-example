@@ -102,7 +102,7 @@ const Home: NextPage = () => {
     <>
       <Box bg={boxBgColor} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box><Text fontSize="2xl" as="b">BetterUpload</Text></Box>
+          <Box><Text fontSize="2xl" as="b">Discord NextAuth</Text></Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
