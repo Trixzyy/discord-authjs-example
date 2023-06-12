@@ -68,7 +68,7 @@ const Home: NextPage = () => {
                     minW={0}>
                     <Avatar
                       size={'sm'}
-                      src={user?.image}
+                      src={user?.image || ''}
                     />
                   </MenuButton>
                   <MenuList alignItems={'center'}>
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
                     <Center>
                       <Avatar
                         size={'2xl'}
-                        src={user?.image}
+                        src={user?.image || ''}
                       />
                     </Center>
                     <br />
