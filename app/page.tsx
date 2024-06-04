@@ -19,7 +19,7 @@ import { MainNav } from "../components/dashboard/main-nav";
 import { Overview } from "../components/dashboard/overview";
 import { RecentSales } from "../components/dashboard/recent-sales";
 import { Search } from "../components/dashboard/search";
-import { SignIn } from "@/components/dashboard/signIn";
+import { SignIn } from "../components/dashboard/signIn";
 import { auth } from "@/auth";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 
