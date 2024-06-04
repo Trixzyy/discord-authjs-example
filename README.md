@@ -4,6 +4,8 @@
 
 This repository demonstrates how to implement OAuth authentication using [Auth.js](https://authjs.dev/) and Discord, along with the [ShadCN](https://ui.shadcn.com/) component library in a Next.js application.
 
+![Auth GIF Demo](https://github.com/Trixzyy/discord-authjs-example/assets/74984365/d6757039-47c2-4e3e-826e-82774460875a)
+
 ## Table of Contents
 - [Features](#features)
 - [Getting Started](#getting-started)
